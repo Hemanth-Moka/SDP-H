@@ -1,0 +1,144 @@
+/* Background Styling */
+body {
+    background: url('../assets/4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Main Container */
+  .sports-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px 20px;
+    min-height: 100vh;
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  /* Sports Cards Grid */
+  .sports-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .sport-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .sport-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .sport-card h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  /* Venue Details */
+  .venue-details {
+    display: none;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+  
+  .venue-details.active {
+    display: block;
+  }
+  
+  /* Venue Card */
+  .venue-card {
+    margin-bottom: 20px;
+  }
+  
+  .venue-card h3 {
+    font-size: 1.5rem;
+    color: #444;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Section Card */
+  .section-card {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Seat Grid */
+  .grid {
+    display: grid;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Seat Button */
+  button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Available Seat */
+  button {
+    background-color: #e0e0e0;
+    color: #000;
+  }
+  
+  /* Selected Seat */
+  button.selected {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #0056b3;
+  }
+  
+  /* Checkout Button */
+  .checkout-button {
+    background: #28a745;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Disable Checkout when no seat selected */
+  .checkout-button:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+  

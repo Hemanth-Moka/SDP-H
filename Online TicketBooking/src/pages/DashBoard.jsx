@@ -33,6 +33,7 @@ const DashBoard = () => {
       {/* CTA Banner */}
       <div className="cta-banner">
         <h2>Welcome to Online Ticket Booking</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis est eaque repellendus doloribus optio.<br></br> Officiis harum esse quam dolorum expedita blanditiis assumenda nisi ipsum velit, dolore, omnis doloribus aperiam optio.</p>
         <p>Book your tickets hassle-free and explore your destinations!</p>
         <button className="cta-button">Book Now</button>
       </div>
@@ -42,6 +43,7 @@ const DashBoard = () => {
         {/* Online Ticket Booking */}
         <div className="section-category ticketing">
           <h2>Online Ticket Booking</h2>
+          
           <div className="sections-container">
             {sections.filter(s => s.category === "ticketing").map((section, index) => (
               <Link to={section.path} key={index} className="section-card">

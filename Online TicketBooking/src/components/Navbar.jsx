@@ -1,18 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${showNavbar ? "visible" : "hidden"}`}>
       <div className="navbar-container">
-        {/* Logo on the Left */}
-        <Link to="/" className="logo">Online Ticket Booking</Link>
+        <Link to="/" className="logo">Book N Ride</Link>
 
-        {/* Navigation Links */}
         <ul className="nav-links">
           <li>
             <Link to="/">
@@ -22,37 +34,43 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/travel">
-              <img src="/assets/travel-icon.png" alt="Travel" className="nav-icon" />
+              <img src="/assets/navbar/Flights.jpg" alt="Travel" className="nav-icon" />
               Travel
             </Link>
           </li>
           <li>
+            <Link to="/login">
+              <img src="/assets/navbar/Login.jpg" alt="Login" className="nav-icon" />
+              Login
+            </Link>
+          </li>
+          <li>
             <Link to="/movies">
-              <img src="/assets/movies-icon.png" alt="Movies" className="nav-icon" />
+              <img src="/assets/navbar/Movie.jpg" alt="Movies" className="nav-icon" />
               Movies
             </Link>
           </li>
           <li>
             <Link to="/sports">
-              <img src="/assets/sports-icon.png" alt="Sports" className="nav-icon" />
+              <img src="/assets/navbar/Sports.jpg" alt="Sports" className="nav-icon" />
               Sports
             </Link>
           </li>
           <li>
             <Link to="/flights">
-              <img src="/assets/flights-icon.png" alt="Flights" className="nav-icon" />
+              <img src="/assets/navbar/Flights.jpg" alt="Flights" className="nav-icon" />
               Flights
             </Link>
           </li>
           <li>
             <Link to="/events">
-              <img src="/assets/events-icon.png" alt="Events" className="nav-icon" />
+              <img src="/assets/navbar/Events.jpg" alt="Events" className="nav-icon" />
               Events
             </Link>
           </li>
           <li>
             <Link to="/hotels">
-              <img src="/assets/hotels-icon.png" alt="Hotels" className="nav-icon" />
+              <img src="/assets/navbar/Hotel.jpg" alt="Hotels" className="nav-icon" />
               Hotels
             </Link>
           </li>
@@ -64,7 +82,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* User Profile Menu */}
         <div className="user-menu">
           <button className="user-btn" onClick={() => setDropdownOpen(!dropdownOpen)}>
             <FaUser />

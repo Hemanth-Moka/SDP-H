@@ -4,11 +4,16 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import DashBoard from './pages/DashBoard';
 import Login from './pages/Login';
+import Sports from './pages/Sports';
 import Registration from './pages/Registration';
 import Movietickets from './pages/Movietickets';
+import L from './pages/Login';
 import Buses from './transport/Buses';
 import Cabs from './transport/Cabs';
 import Flights from "./transport/Flights";
+
+
+
 import Hotels from './accomdation/Hotels';
 import HotelCheckin from './accomdation/HotelCheckin';
 
@@ -19,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DashBoard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Sports" element={<Sports />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/movies" element={<Movietickets />} />
         <Route path="/buses" element={<Buses />} />
